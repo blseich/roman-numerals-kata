@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { numeralToInteger } from '../src/RomanNumerals'
 
-xdescribe('Converting Roman Numerals to Integers', () => {
+describe('Converting Roman Numerals to Integers', () => {
     
     it('should convert I to 1', () => {
         expect(numeralToInteger('I')).to.be.equal(1)
@@ -39,4 +39,23 @@ xdescribe('Converting Roman Numerals to Integers', () => {
         expect(numeralToInteger('XIV')).to.be.equal(14)
     })
     
+    it('should convert XVIII to 18', () => {
+        expect(numeralToInteger('XVIII')).to.be.equal(18)
+    })
+
+    it('should convert XIX to 19', () => {
+        expect(numeralToInteger('XIX')).to.be.equal(19)
+    })
+
+    it('should convert XX to 20', () => {
+        expect(numeralToInteger('XX')).to.be.equal(20)
+    })
+
+    it('should convert XIX to 29', () => {
+        expect(numeralToInteger('XXIX')).to.be.equal(29)
+    })
+
+    it('should convert L to 50', () => {
+        expect(numeralToInteger('L')).to.be.equal(50)
+    })
 })
