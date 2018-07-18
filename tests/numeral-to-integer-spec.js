@@ -70,4 +70,33 @@ describe('Converting Roman Numerals to Integers', () => {
     it('should convert XLIV to 49', () => {
         expect(numeralToInteger('XLIX')).to.be.equal(49)
     })
+
+    it('should convert LXXXIX to 89', () => {
+        expect(numeralToInteger('LXXXIX')).to.be.equal(89)
+    })
+
+    it('should convert C to 100', () => {
+        expect(numeralToInteger('C')).to.be.equal(100)
+    })
+
+    it('should convert XC to 90', () => {
+        expect(numeralToInteger('XC')).to.be.equal(90)
+    })
+
+    it('should convert XC to 93', () => {
+        expect(numeralToInteger('XCIII')).to.be.equal(93)
+    })
+
+    it('should convert XC to 94', () => {
+        expect(numeralToInteger('XCIV')).to.be.equal(94)
+    })
+
+    it('should convert XC to 98', () => {
+        expect(numeralToInteger('XCVIII')).to.be.equal(98)
+    })
+
+
+    it('should convert XC to 99', () => {
+        expect(numeralToInteger('XCIX')).to.be.equal(99)
+    })
 })
