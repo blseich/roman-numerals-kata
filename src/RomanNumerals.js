@@ -17,10 +17,6 @@ const reduceIntegerArray = (integerArr) => {
 };
 
 const numeralToInteger = (numeral) => {
-    if(numeral.length === 1){
-        return numeralToIntegerMap[numeral];
-    }
-
     let integerArr = createIntegerArray(numeral);
 
     return reduceIntegerArray(integerArr);
