@@ -1,38 +1,9 @@
 import numeralToIntegerMap from './numeralToInteger';
+import _ from 'lodash';
 
-const createIntegerArray = (numeralString) => {
-    return (numeralString.split("")).map( curr => {
-        return numeralToIntegerMap[curr];
-    });
-};
+const combineNumeralValues = (acc, val, i, coll) => coll[i] < coll[i+1] && i+1 < coll.length ? acc - val : acc + val;
 
-const numeralToInteger = (numeral) => {
-    if(numeral.length === 1){
-        return numeralToIntegerMap[numeral];
-    }
-
-    let integerArr = numeral.split("").map((curr) => {
-        numeralToIntegerMap[curr];
-    });
-
-    
-
-
-
-    for(let i = 1; i < numeral.length; i++){
-        let char = numeralToIntegerMap[numeral.charAt(i)];
-        let prevChar = numeralToIntegerMap[numeral.charAt(i-1)];
-        if(char > prevChar){
-            integer = char - integer;
-        } else {
-            integer += char;
-        }
-    }
-
-    return integer;
-};
-
-export {
-    createIntegerArray,
-    numeralToInteger
-}
+export default (numeralStr) => (_.chain(numeralStr.split("")
+    .map(numeral => numeralToIntegerMap[numeral]))
+    .reduceRight(combineNumeralValues, 0)
+    .value());
