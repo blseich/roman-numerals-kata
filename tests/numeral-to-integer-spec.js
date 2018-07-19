@@ -95,8 +95,23 @@ describe('Converting Roman Numerals to Integers', () => {
         expect(numeralToInteger('XCVIII')).to.be.equal(98)
     })
 
-
     it('should convert XC to 99', () => {
         expect(numeralToInteger('XCIX')).to.be.equal(99)
+    })
+
+    it('should convert D to 500', () => {
+        expect(numeralToInteger('D')).to.be.equal(500)
+    })
+
+    it('should convert CD to 400', () => {
+        expect(numeralToInteger('CD')).to.be.equal(400)
+    })
+
+    it('should convert CDXCIX to 499', () => {
+        expect(numeralToInteger('CDXCIX')).to.be.equal(499)
+    })
+
+    it('should convert CDLXXXVIII to 488', () => {
+        expect(numeralToInteger('CDLXXXVIII')).to.be.equal(488)
     })
 })
