@@ -14,4 +14,16 @@ describe('Converting Integers to Roman Numerals', () => {
         expect(integerToNumeral(4)).to.be.equal('IV');
     });
 
+    it('should convert 5 to V', () => {
+        expect(integerToNumeral(5)).to.be.equal('V');
+    });
+
+    it('should convert 8 to VIII', () => {
+        expect(integerToNumeral(8)).to.be.equal('VIII');
+    });
+
+    it('should convert 9 to IX', () => {
+        expect(integerToNumeral(9)).to.be.equal('IX');
+    });
+
 });
