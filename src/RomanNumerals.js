@@ -8,11 +8,11 @@ const createIntegerArray = (numeral) => {
 
 const reduceIntegerArray = (integerArr) => {
     return integerArr.reduceRight((sum, curr, i, arr) => {
-        if(arr[i+1] > curr) {
-            return sum - curr;
-        } else {
-            return sum + curr;
+        if(arr[i+1] > curr){ 
+            curr *= -1;
         }
+
+        return sum + curr;
     });
 };
 

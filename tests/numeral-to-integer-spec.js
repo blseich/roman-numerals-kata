@@ -114,4 +114,20 @@ describe('Converting Roman Numerals to Integers', () => {
     it('should convert CDLXXXVIII to 488', () => {
         expect(numeralToInteger('CDLXXXVIII')).to.be.equal(488)
     })
+
+    it('should convert M to 1000', () => {
+        expect(numeralToInteger('M')).to.be.equal(1000)
+    })
+
+    it('should convert MMMMCMXCIX to 4999', () => {
+        expect(numeralToInteger('MMMMCMXCIX')).to.be.equal(4999)
+    })
+
+    it('should convert MMMMDCCCLXXXVIII to 4888', () => {
+        expect(numeralToInteger('MMMMDCCCLXXXVIII')).to.be.equal(4888)
+    })
+
+    it('should convert MMMCCCXXXIII to 3333', () => {
+        expect(numeralToInteger('MMMCCCXXXIII')).to.be.equal(3333)
+    })
 })
