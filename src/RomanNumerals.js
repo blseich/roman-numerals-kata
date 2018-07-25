@@ -1,5 +1,6 @@
 import numeralToIntegerMap from './numeralToInteger';
 import _ from 'lodash';
+import { compose, keys, map, sort } from 'lodash/fp'
 
 const combineNumeralValues = (acc, val, i, coll) => coll[i] < coll[i+1] && i+1 < coll.length ? acc - val : acc + val;
 
@@ -20,6 +21,7 @@ const buildNumeral = (int, val) => integerToNumeralMap[''+val] + integerToNumera
 const integerToNumeral = (int) => {
     if(int <= 0) return ''
     if(int === 4) return 'IV'
+
     return int >= 10 ? buildNumeral(int, 10) : int >= 5 ? buildNumeral(int, 5) : buildNumeral(int, 1)
 }
 
