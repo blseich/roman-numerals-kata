@@ -10,5 +10,12 @@ describe('Build Numeral Functionality', () => {
     it('should return X when provided 10', () => {
         expect(buildNumFunc.getNumeral(10)).to.be.equal('X')
     })
-    
+
+    it('should return V for 5', () => {
+        expect(buildNumFunc.getNumeral(5)).to.be.equal('V')
+    })
+
+    it('should return I for 1', () => {
+        expect(buildNumFunc.getNumeral(1)).to.be.equal('I')
+    })
 })
