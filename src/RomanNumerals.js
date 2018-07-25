@@ -8,10 +8,19 @@ const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
     .reduceRight(combineNumeralValues, 0)
     .value())
 
+const integerToNumeralMap = {
+    10: 'X',
+    5: 'V',
+    1: 'I'
+}
+
+const buildNumeral = (int, val) => integerToNumeralMap[''+val] + integerToNumeral(int-val)
+
+
 const integerToNumeral = (int) => {
     if(int <= 0) return ''
     if(int === 4) return 'IV'
-    return int >= 10 ? 'X' + integerToNumeral(int-10) : int >= 5 ? 'V' + integerToNumeral(int-5) : 'I' + integerToNumeral(int-1)
+    return int >= 10 ? buildNumeral(int, 10) : int >= 5 ? buildNumeral(int, 5) : buildNumeral(int, 1)
 }
 
 export {
