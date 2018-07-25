@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import numeralToInteger from '../src/RomanNumerals'
+import { numeralToInteger } from '../src/RomanNumerals'
 
 describe('Converting Roman Numerals to Integers', () => {
     
