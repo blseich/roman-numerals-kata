@@ -8,7 +8,7 @@ const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
     .reduceRight(combineNumeralValues, 0)
     .value())
 
-const integerToNumeral = () => 'V'
+const integerToNumeral = (int) => int > 1 ? 'V' : 'I'
 
 export {
     numeralToInteger,
