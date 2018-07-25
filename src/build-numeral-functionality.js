@@ -2,7 +2,9 @@ import { flow, keys, map, filter, minBy } from 'lodash/fp'
 
 const intToNumMap = {
     10: 'X',
+    9: 'IX',
     5: 'V',
+    4: 'IV',
     1: 'I'
 }
 
@@ -13,9 +15,9 @@ const getNearstNumeralInteger = (int) => (flow([
     minBy((num) => int-num)
 ])(intToNumMap) || 0)
 
-const getNumeral = (int) => intToNumMap[''+int]
+const getSingleNumeral = (int) => intToNumMap[''+int]
 
 export default {
     getNearstNumeralInteger,
-    getNumeral
+    getSingleNumeral
 }

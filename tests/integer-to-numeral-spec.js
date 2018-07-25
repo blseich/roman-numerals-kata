@@ -23,12 +23,24 @@ describe("Integer to Numeral", () => {
         expect(integerToNumeral(6)).to.be.equal('VI')
     })
 
+    it('should convert 9 to IX', () => {
+        expect(integerToNumeral(9)).to.be.equal('IX')
+    })
+
     it('should convert 10 to X', () => {
         expect(integerToNumeral(10)).to.be.equal('X')
     })
 
     it('should convert 11 to XI', () => {
         expect(integerToNumeral(11)).to.be.equal('XI')
+    })
+
+    it('should convert 14 to XIV', () => {
+        expect(integerToNumeral(11)).to.be.equal('XI')
+    })
+
+    it('should convert 19 to XIX', () => {
+        expect(integerToNumeral(19)).to.be.equal('XIX')
     })
 
 })
