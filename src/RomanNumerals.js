@@ -10,6 +10,7 @@ const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
 
 const integerToNumeral = (int) => {
     if(int === 0) return ''
+    if(int === 4) return 'IV'
     return int >= 5 ? 'V' + integerToNumeral(int-5) : 'I' + integerToNumeral(int-1)
 }
 
