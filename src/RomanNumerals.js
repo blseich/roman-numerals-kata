@@ -8,7 +8,10 @@ const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
     .reduceRight(combineNumeralValues, 0)
     .value())
 
-const integerToNumeral = (int) => int > 1 ? 'V' : 'I'
+const integerToNumeral = (int) => {
+    if(int === 0) return ''
+    return int > 1 ? 'V' + integerToNumeral(int-5): 'I'
+}
 
 export {
     numeralToInteger,

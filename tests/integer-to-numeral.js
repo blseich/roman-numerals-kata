@@ -11,4 +11,8 @@ describe("Integer to Numeral", () => {
         expect(integerToNumeral(5)).to.be.equal('V')
     })
 
+    it('should convert 6 to VI', () => {
+        expect(integerToNumeral(6)).to.be.equal('VI')
+    })
+
 })
