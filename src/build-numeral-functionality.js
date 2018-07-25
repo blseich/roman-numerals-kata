@@ -1,4 +1,4 @@
-import { flow, keys, map, filter, sortBy } from 'lodash/fp'
+import { flow, keys, map, filter, minBy } from 'lodash/fp'
 
 const intToNumMap = {
     10: 'X',
@@ -6,16 +6,16 @@ const intToNumMap = {
     1: 'I'
 }
 
-const buildIntegerRepresentativeArray = (int) => flow([
+const getNearstNumeralInteger = (int) => (flow([
     keys,
     map((key) => parseInt(key)),
     filter((num) => int >= num),
-    sortBy((num) => 0-num)
-])(intToNumMap)
+    minBy((num) => int-num)
+])(intToNumMap) || 0)
 
 const getNumeral = (int) => intToNumMap[''+int]
 
 export default {
-    buildIntegerRepresentativeArray,
+    getNearstNumeralInteger,
     getNumeral
 }

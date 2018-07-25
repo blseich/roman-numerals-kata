@@ -14,11 +14,11 @@ const buildNumeral = (int, val) => buildNumFunc.getNumeral(val) + integerToNumer
 
 
 const integerToNumeral = (int) => {
-    const integerArray = buildNumFunc.buildIntegerRepresentativeArray(int)
+    const nearestNumInt = buildNumFunc.getNearstNumeralInteger(int)
     if(int === 0) return ''
     if(int === 4) return 'IV'
 
-    return buildNumFunc.getNumeral(integerArray[0]) + integerToNumeral(int - integerArray[0])
+    return buildNumFunc.getNumeral(nearestNumInt) + integerToNumeral(int - nearestNumInt)
 }
 
 export {

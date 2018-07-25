@@ -3,12 +3,15 @@ import buildNumFunc from '../src/build-numeral-functionality.js'
 
 describe('Build Numeral Functionality', () => {
 
-    it('should return sorted array of integers less than the provided integer', () => {
-        expect(buildNumFunc.buildIntegerRepresentativeArray(7)).to.include.ordered.members([5, 1]);
+    it('should return 5 when passed 6-9', () => {
+        expect(buildNumFunc.getNearstNumeralInteger(6)).to.be.equal(5)
+        expect(buildNumFunc.getNearstNumeralInteger(7)).to.be.equal(5)
+        expect(buildNumFunc.getNearstNumeralInteger(8)).to.be.equal(5)
+        expect(buildNumFunc.getNearstNumeralInteger(9)).to.be.equal(5)
     })
 
-    it('should return empty array when passed 0', () => {
-        expect(buildNumFunc.buildIntegerRepresentativeArray(0)).to.be.empty;
+    it('should return 0 when passed 0', () => {
+        expect(buildNumFunc.getNearstNumeralInteger(0)).to.be.equal(0);
     })
 
     it('should return X when provided 10', () => {
