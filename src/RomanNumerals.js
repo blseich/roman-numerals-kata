@@ -1,14 +1,15 @@
 import numeralToIntegerMap from './numeralToInteger'
 import buildNumFunc from './build-numeral-functionality'
 import _ from 'lodash';
-import { compose, keys, map, sort } from 'lodash/fp'
+import { flow, split, map, reduceRight } from 'lodash/fp'
 
 const combineNumeralValues = (acc, val, i, coll) => coll[i] < coll[i+1] && i+1 < coll.length ? acc - val : acc + val;
 
-const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
-    .map(numeral => numeralToIntegerMap[numeral]))
+const numeralToInteger = (numeralStr) => _.chain(numeralStr)
+    .split("")
+    .map(numeral => numeralToIntegerMap[numeral])
     .reduceRight(combineNumeralValues, 0)
-    .value())
+    .value()
 
 const buildNumeral = (int, val) => buildNumFunc.getSingleNumeral(val) + integerToNumeral(int-val)
 
