@@ -1,7 +1,6 @@
 import numeralToIntegerMap from './numeralToInteger'
 import buildNumFunc from './build-numeral-functionality'
 import _ from 'lodash';
-import { flow, split, map, reduceRight } from 'lodash/fp'
 
 const combineNumeralValues = (acc, val, i, coll) => coll[i] < coll[i+1] && i+1 < coll.length ? acc - val : acc + val;
 
