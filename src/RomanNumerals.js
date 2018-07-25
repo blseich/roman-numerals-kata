@@ -1,4 +1,5 @@
-import numeralToIntegerMap from './numeralToInteger';
+import numeralToIntegerMap from './numeralToInteger'
+import buildNumFunc from './build-numeral-functionality'
 import _ from 'lodash';
 import { compose, keys, map, sort } from 'lodash/fp'
 
@@ -9,20 +10,15 @@ const numeralToInteger = (numeralStr) => (_.chain(numeralStr.split("")
     .reduceRight(combineNumeralValues, 0)
     .value())
 
-const integerToNumeralMap = {
-    10: 'X',
-    5: 'V',
-    1: 'I'
-}
-
-const buildNumeral = (int, val) => integerToNumeralMap[''+val] + integerToNumeral(int-val)
+const buildNumeral = (int, val) => buildNumFunc.getNumeral(val) + integerToNumeral(int-val)
 
 
 const integerToNumeral = (int) => {
-    if(int <= 0) return ''
+    const integerArray = buildNumFunc.buildIntegerRepresentativeArray(int)
+    if(int === 0) return ''
     if(int === 4) return 'IV'
 
-    return int >= 10 ? buildNumeral(int, 10) : int >= 5 ? buildNumeral(int, 5) : buildNumeral(int, 1)
+    return buildNumFunc.getNumeral(integerArray[0]) + integerToNumeral(int - integerArray[0])
 }
 
 export {

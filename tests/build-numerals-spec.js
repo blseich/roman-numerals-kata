@@ -3,8 +3,12 @@ import buildNumFunc from '../src/build-numeral-functionality.js'
 
 describe('Build Numeral Functionality', () => {
 
-    it('should return sorted array of integers that correspond to numerals', () => {
-        expect(buildNumFunc.buildIntegerRepresentativeArray()).to.include.ordered.members([10, 5, 1]);
+    it('should return sorted array of integers less than the provided integer', () => {
+        expect(buildNumFunc.buildIntegerRepresentativeArray(7)).to.include.ordered.members([5, 1]);
+    })
+
+    it('should return empty array when passed 0', () => {
+        expect(buildNumFunc.buildIntegerRepresentativeArray(0)).to.be.empty;
     })
 
     it('should return X when provided 10', () => {
