@@ -43,4 +43,19 @@ describe("Integer to Numeral", () => {
         expect(integerToNumeral(19)).to.be.equal('XIX')
     })
 
+    it('should convert 40 to XL', () => {
+        expect(integerToNumeral(40)).to.be.equal('XL')
+    })
+
+    it('should convert 49 to XLIX', () => {
+        expect(integerToNumeral(49)).to.be.equal('XLIX')
+    })
+
+    it('should convert 50 to L', () => {
+        expect(integerToNumeral(50)).to.be.equal('L')
+    })
+
+    it('should convert 89 to LXXIX', () => {
+        expect(integerToNumeral(50)).to.be.equal('L')
+    })
 })

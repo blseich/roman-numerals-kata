@@ -1,6 +1,8 @@
 import { flow, keys, map, filter, minBy } from 'lodash/fp'
 
 const intToNumMap = {
+    50: 'L',
+    40: 'XL',
     10: 'X',
     9: 'IX',
     5: 'V',
