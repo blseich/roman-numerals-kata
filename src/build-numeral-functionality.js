@@ -1,10 +1,17 @@
-const buildIntegerRepresentativeArray = () => [10, 5, 1]
+import { flow, keys, map, sortBy } from 'lodash/fp'
 
-const getNumeral = (int) => ({
+const intToNumMap = {
     10: 'X',
     5: 'V',
     1: 'I'
-}[''+int])
+}
+
+const buildIntegerRepresentativeArray = () => flow([keys,
+    map((key) => parseInt(key)),
+    sortBy((int) => 0-int)
+])(intToNumMap)
+
+const getNumeral = (int) => intToNumMap[''+int]
 
 export default {
     buildIntegerRepresentativeArray,
