@@ -10,8 +10,6 @@ const numeralToInteger = (numeralStr) => _.chain(numeralStr)
     .reduceRight(combineNumeralValues, 0)
     .value()
 
-const buildNumeral = (int, val) => buildNumFunc.getSingleNumeral(val) + integerToNumeral(int-val)
-
 const integerToNumeral = (int) => {
     const nearestNumInt = buildNumFunc.getNearstNumeralInteger(int)
     if(int === 0) return ''
